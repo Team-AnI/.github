@@ -99,10 +99,6 @@ flowchart LR
 ## 🧑‍💻 처음 오신 분을 위한 10분 온보딩
 
 1. **Engineering Handbook** 빠르게 훑기  
-   - [COMMIT_CONVENTION.md](../docs/engineering/COMMIT_CONVENTION.md)  
-   - [PR_GUIDE.md](../docs/engineering/PR_GUIDE.md)  
-   - [PR_REVIEW_GUIDE.md](../docs/engineering/PR_REVIEW_GUIDE.md)  
-   - [CLEAN_CODE.md](../docs/engineering/CLEAN_CODE.md)
 
 2. 참여할 레포 하나 선택하기  
    - `A-AND-I-<Period>-CODE-LAB` 또는  
