@@ -11,6 +11,12 @@
 
 ## 0) 공통 원칙
 
+- 표준 URI 패턴은 아래를 따른다.
+  - `/{version}/{domain}/{path}`
+  - 예: `/v1/courses/{courseSlug}/assignments`
+- `version`은 `v1`, `v2`처럼 명시적 버전명을 사용한다.
+- `domain`은 책임 경계를 나타내는 상위 리소스(prefix)다.
+  - 예: `auth`, `admin`, `report`, `courses`, `posts`
 - Base Path는 명시적 버전으로 시작한다.
   - 예: `/v1/...`
 - 리소스는 **명사**로 표현한다.
@@ -32,6 +38,21 @@
 - Internal 전용: `/internal/v1/**`
 
 > 권한 정책은 Prefix 단위로 먼저 정의하고, 세부 권한은 엔드포인트에서 보강한다.
+
+### 표준 패턴 예시
+- `GET /v1/courses`
+- `PATCH /v1/admin/users/role`
+- `POST /v1/posts`
+
+### 예외 패턴(허용)
+- `POST /activate`
+  - 인증/초대 활성화 레거시 엔드포인트
+- `/v1/me`, `/v1/me/**`
+  - 사용자 자기 자신(self) 리소스
+- `/internal/v1/**`
+  - 외부 공개용이 아닌 내부 시스템 API
+- `/v2/**`
+  - 레거시 alias. 신규 API는 `v1` 표준 패턴으로 먼저 설계
 
 ---
 
