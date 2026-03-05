@@ -93,6 +93,7 @@ flowchart LR
 - ✅ PR 작성 가이드: **[PR_GUIDE.md](../docs/engineering/PR_GUIDE.md)**
 - ✅ PR/리뷰 가이드: **[PR_REVIEW_GUIDE.md](../docs/engineering/PR_REVIEW_GUIDE.md)**
 - ✅ 클린 코드 가이드: **[CLEAN_CODE.md](../docs/engineering/CLEAN_CODE.md)**
+- ✅ API 네이밍 가이드: **[API_NAMING.md](../docs/API_NAMING.md)**
 
 ---
 
