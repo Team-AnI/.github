@@ -7,6 +7,15 @@
 > - 프론트/백엔드/게이트웨이 간 계약 혼선을 줄이기
 > - 버저닝/레거시 호환 시 충돌을 줄이기
 
+## Quick Links
+
+- [Backend Docs Index](./README.md)
+- [Backend API Common Exception Handling Guide v1](./COMMON_EXCEPTION_HANDLING_GUIDE_V1.md)
+- [Auth API-Spec-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/API-Spec-v1)
+- [Report API-Spec-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/API-Spec-v1)
+- [Gateway API-Spec-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/API-Spec-v1)
+- [Blog API-Spec-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/API-Spec-v1.md)
+
 ---
 
 ## 0) 공통 원칙
