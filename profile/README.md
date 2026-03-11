@@ -102,6 +102,13 @@ flowchart LR
 - ✅ API 네이밍 가이드: **[API_NAMING.md](../docs/backend/API_NAMING.md)**
 - ✅ 공통 예외처리 가이드: **[COMMON_EXCEPTION_HANDLING_GUIDE_V1.md](../docs/backend/COMMON_EXCEPTION_HANDLING_GUIDE_V1.md)**
 
+### Service Error Models
+
+- Auth: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/Error-Model-v1)**
+- Report: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/Error-Model-v1)**
+- Gateway: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/Error-Model-v1)**
+- Blog: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Error-Model-v1.md)**
+
 ---
 
 ## 🧑‍💻 처음 오신 분을 위한 10분 온보딩
