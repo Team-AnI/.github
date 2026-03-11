@@ -1,7 +1,7 @@
 # Backend API Common Exception Handling Guide v1
 
 > 본 문서는 **Team-AnI 백엔드 서비스 공통 예외처리 표준안**입니다.
-> 각 서비스(Auth, Report, Gateway, Blog 등)는 본 문서를 기준으로 자체 구현을 맞춥니다.
+> 각 서비스(Auth, Report, Web, Gateway, Blog 등)는 본 문서를 기준으로 자체 구현을 맞춥니다.
 >
 > 대표 구현 대상 예시:
 >
@@ -25,6 +25,7 @@
 
 - [Auth Error-Model-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/Error-Model-v1)
 - [Report Error-Model-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/Error-Model-v1)
+- [Web Error-Model-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/Error-Model-v1)
 - [Gateway Error-Model-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/Error-Model-v1)
 - [Blog Error-Model-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Error-Model-v1.md)
 
@@ -32,6 +33,7 @@
 
 - [Auth API-Spec-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/API-Spec-v1)
 - [Report API-Spec-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/API-Spec-v1)
+- [Web API-Spec-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/API-Spec-v1)
 - [Gateway API-Spec-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/API-Spec-v1)
 - [Blog API-Spec-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/API-Spec-v1.md)
 
@@ -72,6 +74,7 @@
 - 공통 인덱스: [Backend Docs Index](./README.md)
 - Auth 상세: [Auth Error-Model-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/Error-Model-v1)
 - Report 상세: [Report Error-Model-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/Error-Model-v1)
+- Web 상세: [Web Error-Model-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/Error-Model-v1)
 - Gateway 상세: [Gateway Error-Model-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/Error-Model-v1)
 - Blog 상세: [Blog Error-Model-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Error-Model-v1.md)
 
@@ -597,5 +600,6 @@ class GlobalExceptionHandler {
 - [Backend API Naming Guide (A&I)](./API_NAMING.md)
 - [Auth Error-Model-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/Error-Model-v1)
 - [Report Error-Model-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/Error-Model-v1)
+- [Web Error-Model-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/Error-Model-v1)
 - [Gateway Error-Model-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/Error-Model-v1)
 - [Blog Error-Model-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Error-Model-v1.md)

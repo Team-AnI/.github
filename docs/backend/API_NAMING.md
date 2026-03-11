@@ -13,6 +13,7 @@
 - [Backend API Common Exception Handling Guide v1](./COMMON_EXCEPTION_HANDLING_GUIDE_V1.md)
 - [Auth API-Spec-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/API-Spec-v1)
 - [Report API-Spec-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/API-Spec-v1)
+- [Web API-Spec-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/API-Spec-v1)
 - [Gateway API-Spec-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/API-Spec-v1)
 - [Blog API-Spec-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/API-Spec-v1.md)
 
@@ -42,6 +43,7 @@
 - Me(User self): `/v1/me*`
 - Admin: `/v1/admin/**`
 - Report: `/v1/report/**`
+- Web(Course/Learning): `/v1/courses/**`
 - Course Query: `/v1/courses/**`
 - Blog(Post): `/v1/posts/**`
 - Internal 전용: `/internal/v1/**`

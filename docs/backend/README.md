@@ -46,6 +46,10 @@
   - [Wiki Home](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki)
   - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/API-Spec-v1)
   - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/Error-Model-v1)
+- Web
+  - [Wiki Home](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki)
+  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/API-Spec-v1)
+  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/Error-Model-v1)
 - Gateway
   - [Wiki Home](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki)
   - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/API-Spec-v1)

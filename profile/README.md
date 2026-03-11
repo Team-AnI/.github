@@ -96,7 +96,7 @@ flowchart LR
 
 ## 🧱 Backend Docs
 
-백엔드 서비스(Auth, Report, Gateway, Blog 등)는 아래 공통 문서를 기준으로 맞춥니다:
+백엔드 서비스(Auth, Report, Web, Gateway, Blog 등)는 아래 공통 문서를 기준으로 맞춥니다:
 
 - ✅ Backend Docs Index: **[README.md](../docs/backend/README.md)**
 - ✅ API 네이밍 가이드: **[API_NAMING.md](../docs/backend/API_NAMING.md)**
@@ -106,6 +106,7 @@ flowchart LR
 
 - Auth: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/Error-Model-v1)**
 - Report: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/Error-Model-v1)**
+- Web: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/Error-Model-v1)**
 - Gateway: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/Error-Model-v1)**
 - Blog: **[Error-Model-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Error-Model-v1.md)**
 
