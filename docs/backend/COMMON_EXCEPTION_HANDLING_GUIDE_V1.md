@@ -9,6 +9,8 @@
 > - `common/error/ErrorResponseFactory.kt`
 > - `common/error/GlobalExceptionHandler.kt`
 > - `common/config/SwaggerConfig.kt`
+>
+> 서비스별 상세 예외 시나리오와 도메인 전용 에러 코드는 각 레포 wiki에서 관리합니다.
 
 ---
 
@@ -23,6 +25,24 @@
 3. Swagger/OpenAPI 문서에 공통 오류 응답이 일관되게 노출되어야 한다.
 4. 운영 시 `X-Request-Id` 기준으로 로그와 오류 응답을 쉽게 연결할 수 있어야 한다.
 5. 사용자에게는 안전한 메시지만 노출하고, 내부 스택트레이스나 민감한 정보는 숨겨야 한다.
+
+---
+
+## 0.1 문서 Depth 원칙
+
+이 문서는 **공통 규칙(Depth 1)** 만 정의한다.
+
+- `.github` 공통 문서:
+  - 공통 응답 모델
+  - 공통 HTTP status 정책
+  - 공통 `error.code` taxonomy
+  - 공통 Swagger/OpenAPI 문서화 기준
+- 서비스별 레포 wiki:
+  - Auth/Report/Blog/Gateway 도메인 전용 예외 코드
+  - 세부 예외 메시지 정책
+  - 서비스 특화 운영/장애 대응 규칙
+
+즉, 클라이언트가 우선 분기해야 하는 **공통 에러 모델**은 이 문서에서 정의하고, 서비스별 상세 케이스는 각 레포 wiki로 내려보낸다.
 
 ---
 
@@ -168,6 +188,51 @@
 
 ## 5. 공통 `ErrorCode` 설계 가이드
 
+### 5.0 공통 에러 코드 분류 체계
+
+클라이언트는 개별 서비스 구현이 아니라 아래 공통 코드군을 기준으로 먼저 분기한다.
+
+#### 1) 요청/입력 오류
+
+- `VALIDATION_ERROR`
+- `INPUT_ERROR`
+- `JSON_PARSE_ERROR`
+- `ENUM_MISMATCH`
+- `MISSING_REQUIRED_VALUE`
+- `BAD_REQUEST`
+
+#### 2) 인증/인가 오류
+
+- `UNAUTHORIZED`
+- `AUTH_TOKEN_EXPIRED`
+- `AUTH_TOKEN_INVALID`
+- `FORBIDDEN`
+
+#### 3) 리소스/상태 오류
+
+- `NOT_FOUND`
+- `CONFLICT`
+- `UNPROCESSABLE_ENTITY`
+
+#### 4) 파일/이미지 오류
+
+- `FILE_UPLOAD_FAILED`
+- `IMAGE_TOO_LARGE`
+- `IMAGE_UNSUPPORTED_FORMAT`
+
+#### 5) 외부 의존성/네트워크 오류
+
+- `SMTP_SEND_FAILED`
+- `EXTERNAL_API_FAILED`
+- `UPSTREAM_TIMEOUT`
+- `SERVICE_UNAVAILABLE`
+
+#### 6) 시스템 오류
+
+- `INTERNAL_ERROR`
+
+공통 문서에서는 여기까지 정의하고, 서비스별 세부 코드는 각 레포 wiki에서 확장한다.
+
 ```kotlin
 enum class ErrorCode(
     val status: HttpStatus,
@@ -181,12 +246,20 @@ enum class ErrorCode(
     MISSING_REQUIRED_VALUE(HttpStatus.BAD_REQUEST, "MISSING_REQUIRED_VALUE", "필수 요청값이 누락되었습니다."),
     BAD_REQUEST(HttpStatus.BAD_REQUEST, "BAD_REQUEST", "잘못된 요청입니다."),
     UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "UNAUTHORIZED", "인증이 필요하거나 토큰이 유효하지 않습니다."),
+    AUTH_TOKEN_EXPIRED(HttpStatus.UNAUTHORIZED, "AUTH_TOKEN_EXPIRED", "토큰이 만료되었습니다."),
+    AUTH_TOKEN_INVALID(HttpStatus.UNAUTHORIZED, "AUTH_TOKEN_INVALID", "토큰이 올바르지 않습니다."),
     FORBIDDEN(HttpStatus.FORBIDDEN, "FORBIDDEN", "요청을 수행할 권한이 없습니다."),
     NOT_FOUND(HttpStatus.NOT_FOUND, "NOT_FOUND", "요청한 리소스를 찾을 수 없습니다."),
     METHOD_NOT_ALLOWED(HttpStatus.METHOD_NOT_ALLOWED, "METHOD_NOT_ALLOWED", "허용되지 않은 HTTP 메서드입니다."),
     CONFLICT(HttpStatus.CONFLICT, "CONFLICT", "리소스 충돌이 발생했습니다."),
     UNSUPPORTED_MEDIA_TYPE(HttpStatus.UNSUPPORTED_MEDIA_TYPE, "UNSUPPORTED_MEDIA_TYPE", "지원하지 않는 Content-Type 입니다."),
     UNPROCESSABLE_ENTITY(HttpStatus.UNPROCESSABLE_ENTITY, "UNPROCESSABLE_ENTITY", "현재 상태에서는 요청을 처리할 수 없습니다."),
+    FILE_UPLOAD_FAILED(HttpStatus.BAD_REQUEST, "FILE_UPLOAD_FAILED", "파일 업로드에 실패했습니다."),
+    IMAGE_TOO_LARGE(HttpStatus.BAD_REQUEST, "IMAGE_TOO_LARGE", "이미지 용량이 허용 범위를 초과했습니다."),
+    IMAGE_UNSUPPORTED_FORMAT(HttpStatus.BAD_REQUEST, "IMAGE_UNSUPPORTED_FORMAT", "지원하지 않는 이미지 형식입니다."),
+    SMTP_SEND_FAILED(HttpStatus.SERVICE_UNAVAILABLE, "SMTP_SEND_FAILED", "메일 전송에 실패했습니다."),
+    EXTERNAL_API_FAILED(HttpStatus.SERVICE_UNAVAILABLE, "EXTERNAL_API_FAILED", "외부 연동 처리에 실패했습니다."),
+    UPSTREAM_TIMEOUT(HttpStatus.SERVICE_UNAVAILABLE, "UPSTREAM_TIMEOUT", "외부 서비스 응답 시간이 초과되었습니다."),
     TOO_MANY_REQUESTS(HttpStatus.TOO_MANY_REQUESTS, "TOO_MANY_REQUESTS", "요청이 너무 많습니다."),
     INTERNAL_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "INTERNAL_ERROR", "서버 내부 오류가 발생했습니다."),
     SERVICE_UNAVAILABLE(HttpStatus.SERVICE_UNAVAILABLE, "SERVICE_UNAVAILABLE", "일시적으로 서비스를 사용할 수 없습니다."),
@@ -198,6 +271,7 @@ enum class ErrorCode(
 - `code`는 외부 계약으로 본다.
 - 공통 코드 중심으로 시작하고, 도메인별 세분화는 꼭 필요할 때만 한다.
 - 내부 예외 원문, SQL, stack trace, 토큰 값은 응답에 노출하지 않는다.
+- 공통 코드만으로 부족한 도메인 전용 케이스는 각 서비스 wiki에 정의하되, 공통 코드와 중복되지 않게 설계한다.
 
 ---
 
@@ -449,12 +523,21 @@ class GlobalExceptionHandler {
 - `MISSING_REQUIRED_VALUE`
 - `BAD_REQUEST`
 - `UNAUTHORIZED`
+- `AUTH_TOKEN_EXPIRED`
+- `AUTH_TOKEN_INVALID`
 - `FORBIDDEN`
 - `NOT_FOUND`
 - `METHOD_NOT_ALLOWED`
 - `CONFLICT`
 - `UNSUPPORTED_MEDIA_TYPE`
 - `UNPROCESSABLE_ENTITY`
+- `FILE_UPLOAD_FAILED`
+- `IMAGE_TOO_LARGE`
+- `IMAGE_UNSUPPORTED_FORMAT`
+- `SMTP_SEND_FAILED`
+- `EXTERNAL_API_FAILED`
+- `UPSTREAM_TIMEOUT`
+- `SERVICE_UNAVAILABLE`
 - `INTERNAL_ERROR`
 
 ---
