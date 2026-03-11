@@ -38,10 +38,22 @@
 
 ## 3. Service Wiki Links
 
-- Auth: [A-AND-I-AUTH-SERVER Wiki](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki)
-- Report: [A-AND-I-REPORT-SERVER Wiki](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki)
-- Blog: [A-AND-I-TECH-BLOG-SERVER Wiki](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/wiki)
-- Gateway: [A-AND-I-GATEWAY-SERVER Wiki](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki)
+- Auth
+  - [Wiki Home](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki)
+  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/API-Spec-v1)
+  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/Error-Model-v1)
+- Report
+  - [Wiki Home](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki)
+  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/API-Spec-v1)
+  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/Error-Model-v1)
+- Gateway
+  - [Wiki Home](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki)
+  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/API-Spec-v1)
+  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/Error-Model-v1)
+- Blog
+  - [Docs Home](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Home.md)
+  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/API-Spec-v1.md)
+  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Error-Model-v1.md)
 
 ---
 
