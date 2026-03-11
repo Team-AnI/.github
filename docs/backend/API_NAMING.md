@@ -1,6 +1,6 @@
-# API Naming Guide (A&I)
+# Backend API Naming Guide (A&I)
 
-이 문서는 A&I Organization의 API 경로/이름 규칙을 통일하기 위한 가이드입니다.
+이 문서는 A&I Organization 백엔드 서비스의 API 경로/이름 규칙을 통일하기 위한 가이드입니다.
 
 > 목표
 > - 경로만 보고 리소스/권한 범위를 바로 이해할 수 있게

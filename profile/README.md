@@ -93,7 +93,13 @@ flowchart LR
 - ✅ PR 작성 가이드: **[PR_GUIDE.md](../docs/engineering/PR_GUIDE.md)**
 - ✅ PR/리뷰 가이드: **[PR_REVIEW_GUIDE.md](../docs/engineering/PR_REVIEW_GUIDE.md)**
 - ✅ 클린 코드 가이드: **[CLEAN_CODE.md](../docs/engineering/CLEAN_CODE.md)**
-- ✅ API 네이밍 가이드: **[API_NAMING.md](../docs/API_NAMING.md)**
+
+## 🧱 Backend Docs
+
+백엔드 서비스(Auth, Report, Gateway, Blog 등)는 아래 공통 문서를 기준으로 맞춥니다:
+
+- ✅ API 네이밍 가이드: **[API_NAMING.md](../docs/backend/API_NAMING.md)**
+- ✅ 공통 예외처리 가이드: **[COMMON_EXCEPTION_HANDLING_GUIDE_V1.md](../docs/backend/COMMON_EXCEPTION_HANDLING_GUIDE_V1.md)**
 
 ---
 
