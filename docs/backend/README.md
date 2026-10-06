@@ -33,6 +33,7 @@
 
 - [Backend API Naming Guide (A&I)](./API_NAMING.md)
 - [Backend API Common Exception Handling Guide v1](./COMMON_EXCEPTION_HANDLING_GUIDE_V1.md)
+- [Backend API Specification Guide (A&I)](./API_SPEC_GUIDE.md)
 
 ---
 
