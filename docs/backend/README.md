@@ -37,32 +37,7 @@
 
 ---
 
-## 3. Service Wiki Links
-
-- Auth
-  - [Wiki Home](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki)
-  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/API-Spec-v1)
-  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-AUTH-SERVER/wiki/Error-Model-v1)
-- Report
-  - [Wiki Home](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki)
-  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/API-Spec-v1)
-  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-REPORT-SERVER/wiki/Error-Model-v1)
-- Web
-  - [Wiki Home](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki)
-  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/API-Spec-v1)
-  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-WEB-SERVER/wiki/Error-Model-v1)
-- Gateway
-  - [Wiki Home](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki)
-  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/API-Spec-v1)
-  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-GATEWAY-SERVER/wiki/Error-Model-v1)
-- Blog
-  - [Docs Home](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Home.md)
-  - [API-Spec-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/API-Spec-v1.md)
-  - [Error-Model-v1](https://github.com/Team-AnI/A-AND-I-TECH-BLOG-SERVER/blob/main/wiki/Error-Model-v1.md)
-
----
-
-## 4. 예외처리 문서 적용 원칙
+## 3. 예외처리 문서 적용 원칙
 
 공통 예외처리 문서에서는 아래만 정의합니다.
 
@@ -87,7 +62,7 @@
 
 ---
 
-## 5. 권장 운영 방식
+## 4. 권장 운영 방식
 
 1. 공통 변경은 `.github` 문서를 먼저 수정한다.
 2. 서비스별 상세 정책은 각 레포 wiki에서 이어서 정의한다.
