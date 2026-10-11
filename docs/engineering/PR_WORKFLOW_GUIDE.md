@@ -3,13 +3,34 @@
 > **대상:** A&I 웹·모바일·백엔드·AI 트랙 구성원  
 > **목적:** 작은 변경을 올리고, 검증 근거를 공유하고, 존중하는 리뷰로 품질을 높입니다.
 
-이 문서는 [MOAMOA Server](https://github.com/Team-AnI/MOAMOA-Server/blob/main/README.md), [MOAMOA Flutter](https://github.com/Team-AnI/MOAMOA-Flutter/blob/main/README.md)의 실제 협업 흐름을 예시로 설명합니다. [A&I 공통 PR 가이드](PR_GUIDE.md), [리뷰 운영 가이드](PR_REVIEW_GUIDE.md), [커밋 컨벤션](COMMIT_CONVENTION.md)과 함께 읽어 주세요. **조직의 일반 권장 규칙과 프로젝트별 필수 규칙은 다를 수 있습니다.**
+이 문서는 [MOAMOA Server](https://github.com/Team-AnI/MOAMOA-Server/blob/main/README.md), [MOAMOA Flutter](https://github.com/Team-AnI/MOAMOA-Flutter/blob/main/README.md)의 실제 협업 흐름을 예시로 설명합니다. [A&I 공통 PR 가이드](PR_GUIDE.md), [리뷰 운영 가이드](PR_REVIEW_GUIDE.md), [커밋 컨벤션](COMMIT_CONVENTION.md)과 함께 읽어 주세요. **A&I 기본 규칙은 MOAMOA의 공통 방식으로 통일하되, 프로젝트별 자동 검사 및 별도 운영 규칙은 해당 저장소 문서를 따릅니다.**
 
 ## 1. 전체 흐름
 
-```text
-Issue 생성 → 기준 브랜치 갱신 → 작업 브랜치 생성 → 개발·테스트
-→ Commit & Push → PR 생성 → 리뷰 → 수정·재검토 → Merge → Issue 확인
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Author as 작성자
+    participant Issue as GitHub Issue
+    participant Fork as 개인 Fork / 작업 브랜치
+    participant PR as Pull Request
+    actor Reviewer as 리뷰어
+    Author->>Issue: 작업 목적 및 완료 기준 등록
+    Author->>Fork: upstream 동기화 후 작업 브랜치 생성
+    Author->>Fork: 구현 · 테스트 · Commit · Push
+    Author->>PR: 원본 저장소 main 대상으로 PR 작성
+    PR-->>Reviewer: 리뷰 요청 및 검증 결과 공유
+    Reviewer->>PR: Diff · CI · 요구사항 검토
+    alt 수정 요청이 있는 경우
+        Reviewer-->>Author: 근거와 개선 방향 전달
+        Author->>Fork: 수정 · 테스트 · Push
+        Author->>PR: Reply 및 재검토 요청
+        Reviewer->>PR: 재확인
+    end
+    Reviewer->>PR: Approve
+    Note over Author,PR: 필수 피드백·CI·승인 조건 확인
+    Author->>PR: Merge
+    Author->>Issue: 자동 종료 여부 확인
 ```
 
 - **Issue:** 무엇을, 왜 바꾸는가?
@@ -30,7 +51,7 @@ git pull --ff-only upstream main
 git switch -c 'feature/#12-login'
 ```
 
-두 저장소의 작업 브랜치 예시는 `feature/#번호-내용`, `fix/#번호-내용`, `docs/#번호-내용`입니다. **반면 조직의 일반 [PR_GUIDE.md](PR_GUIDE.md)는 `feature/<topic>` 등을 권장합니다.** 동일한 규칙으로 강제되어 있다고 쓰지 않고, 작업하는 저장소 README를 우선합니다.
+두 저장소의 작업 브랜치 예시는 `feature/#번호-내용`, `fix/#번호-내용`, `docs/#번호-내용`입니다. **A&I 조직의 기본 규칙도 MOAMOA 형식인 `feature/#번호-내용`을 사용합니다.** 저장소별 자동화나 별도 합의가 있다면 해당 프로젝트 README를 우선합니다.
 
 ```bash
 git status
@@ -40,9 +61,9 @@ git commit -m 'feat: 로그인 상태 처리 추가 (#12)'
 git push -u origin 'feature/#12-login'
 ```
 
-MOAMOA 두 저장소에서는 `<type>: <subject> (#이슈번호)`와 한글 제목을 사용합니다. 조직 공통 커밋 가이드는 `<type>(<scope>): <subject>`를 안내하므로, **프로젝트에 이미 적용된 형식/자동 검증을 먼저 확인**하세요. Merge 전에 불필요한 파일, `.env`, 접근 토큰, 개인 정보가 없는지 점검합니다.
+MOAMOA 두 저장소에서는 `<type>: <subject> (#이슈번호)`와 한글 제목을 사용합니다. 조직 공통 [커밋 가이드](COMMIT_CONVENTION.md)도 이 형식을 기준으로 합니다. **프로젝트에 이미 적용된 자동 검증**을 먼저 확인하세요. Merge 전에 불필요한 파일, `.env`, 접근 토큰, 개인 정보가 없는지 점검합니다.
 
-![Branches 및 Commit 기록 예시](assets/github-collaboration/04-branch-commits.png)
+![작업 브랜치 목록 예시](assets/github-collaboration/04-branch-commits.png)
 
 > Flutter 프로젝트는 `make start ISSUE=12 NAME=login-ui`와 `make pr` 등의 자동화 명령을 제공합니다. 서버에는 동일한 명령이 있다고 가정하지 마세요.
 
@@ -56,7 +77,7 @@ PR 화면에서 **base**는 병합 대상, **compare**는 변경한 브랜치입
 
 ### PR 내용은 무엇을 써야 하나요?
 
-A&I 조직 공통 템플릿에서 가장 중요한 두 항목은 **변경 내용 (What)** 과 **확인 방법 (How to check)** 입니다. 실제 MOAMOA 저장소에서는 관련 이슈, 작업 내용, 테스트 또는 UI 스크린샷, 리뷰 요청 사항, 체크리스트도 사용합니다.
+A&I 조직 공통 템플릿은 MOAMOA 형식을 바탕으로 **관련 이슈, 작업 내용, 검증 결과, 리뷰 요청 사항, 체크리스트**를 사용합니다. UI 변경에는 스크린샷을 추가합니다.
 
 ```markdown
 ## 📌 관련 이슈
@@ -122,11 +143,11 @@ A&I 조직 공통 템플릿에서 가장 중요한 두 항목은 **변경 내용
 
 ![코드 범위 코멘트 입력](assets/github-collaboration/09b-code-range-comment-editor-corrected.png)
 
-조직 공통 리뷰 가이드는 `blocking:`, `suggestion:`, `question:`, `nit:`을 권장합니다. **MOAMOA README에는 `[필수]`, `[제안]`, `[질문]` 표기도 있습니다.** 리뷰의 의미는 같되 프로젝트 합의에 따라 표현을 사용합니다.
+A&I 기본 리뷰 표기는 MOAMOA 방식인 **`[필수]`, `[제안]`, `[질문]`**입니다. 필요하면 사소한 의견을 `[참고]`로 구분할 수 있지만, 필수 여부는 분명히 밝혀야 합니다.
 
-> `blocking:` 권한 검증 없이 데이터 변경 요청이 처리될 수 있습니다. 인가 검증과 실패 테스트가 필요합니다.
+> `[필수]` 권한 검증 없이 데이터 변경 요청이 처리될 수 있습니다. 인가 검증과 실패 테스트가 필요합니다.
 >
-> `question:` 이 상태를 별도로 분리한 이유가 있을까요?
+> `[질문]` 이 상태를 별도로 분리한 이유가 있을까요?
 
 필수 수정에는 **문제의 원인·사용자 영향·수정 방향**을 함께 적습니다. 확실하지 않은 내용은 단정하지 않고 질문으로 남깁니다.
 
