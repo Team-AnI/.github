@@ -65,7 +65,7 @@ MOAMOA 두 저장소에서는 `<type>: <subject> (#이슈번호)`와 한글 제�
 
 ![작업 브랜치 목록 예시](assets/github-collaboration/04-branch-commits.png)
 
-> Flutter 프로젝트는 `make start ISSUE=12 NAME=login-ui`와 `make pr` 등의 자동화 명령을 제공합니다. 서버에는 동일한 명령이 있다고 가정하지 마세요.
+> Flutter 프로젝트는 `make start ISSUE=12 NAME=login-ui`와 `make pr` 등의 자동화 명령을 제공합니다. 서버 프로젝트의 자동화 명령은 해당 저장소 README에서 확인합니다.
 
 ## 3. Pull Request 생성
 
@@ -101,7 +101,7 @@ PR 본문 항목과 작성 기준은 [PR 작성 가이드](PR_GUIDE.md)와 [공�
 
 체크리스트는 위 공통 PR 템플릿의 항목을 사용합니다.
 
-이것은 **설명용 예시**이며, 실제 작성 시 저장소에 자동 표시되는 템플릿을 우선합니다. 실행하지 않은 테스트를 통과했다고 주장하지 마세요. Issue 완료 시 자동 종료가 필요하면 `Refs` 대신 올바른 종료 키워드를 사용합니다.
+이것은 **설명용 예시**이며, 실제 작성 시 저장소에 자동 표시되는 템플릿을 우선합니다. 테스트 결과는 실제 실행한 내용을 기준으로 작성합니다. Issue 완료 시 자동 종료가 필요하면 `Refs` 대신 올바른 종료 키워드를 사용합니다.
 
 | 작업 유형 | 리뷰어에게 보여줄 근거 |
 | --- | --- |
@@ -114,7 +114,7 @@ PR 본문 항목과 작성 기준은 [PR 작성 가이드](PR_GUIDE.md)와 [공�
 
 - **MOAMOA Server:** README에 `./gradlew test`, `./gradlew check` 등 검증 명령이 명시되어 있습니다. 서버 환경에 맞는 실제 실행 결과를 작성합니다.
 - **MOAMOA Flutter:** README에 `dart format .`, `flutter analyze`, `flutter test`, Android Debug Build 및 PR 제목 검사 관련 CI가 명시되어 있습니다. CI 상태를 확인합니다.
-- **그 밖의 A&I 프로젝트:** 동일한 CI나 도구가 있다고 가정하지 않고 해당 저장소 문서를 확인합니다.
+- **그 밖의 A&I 프로젝트:** 사용하는 CI와 도구는 해당 저장소 문서에서 확인합니다.
 
 ## 4. 리뷰어가 확인할 것
 
@@ -126,7 +126,7 @@ PR 본문 항목과 작성 기준은 [PR 작성 가이드](PR_GUIDE.md)와 [공�
 
 ### Files changed
 
-추가(초록색)·삭제(빨간색) 줄과 주변 맥락을 함께 검토합니다. 변경 줄만 읽고 판단하지 않습니다.
+추가(초록색)·삭제(빨간색) 줄과 주변 맥락을 함께 검토합니다.
 
 ![파일별 Diff](assets/github-collaboration/08-pr-files-changed.png)
 
@@ -146,7 +146,7 @@ PR 본문 항목과 작성 기준은 [PR 작성 가이드](PR_GUIDE.md)와 [공�
 >
 > `[질문]` 이 상태를 별도로 분리한 이유가 있을까요?
 
-필수 수정에는 **문제의 원인·사용자 영향·수정 방향**을 함께 적습니다. 확실하지 않은 내용은 단정하지 않고 질문으로 남깁니다.
+필수 수정에는 **문제의 원인·사용자 영향·수정 방향**을 함께 적습니다. 확인이 필요한 내용은 질문으로 남깁니다.
 
 ## 5. 리뷰 제출 및 피드백 반영
 
@@ -154,7 +154,7 @@ PR 본문 항목과 작성 기준은 [PR 작성 가이드](PR_GUIDE.md)와 [공�
 
 ![리뷰 제출 옵션](assets/github-collaboration/10-review-submit-options-corrected.png)
 
-수정 요청을 받았다면 해당 코드를 확인하고 필요한 수정·검증을 거쳐 Push합니다. 댓글에 변경 사항을 설명한 뒤 논의가 끝나면 `Resolve conversation`을 사용합니다. 단순히 답변했다는 이유만으로 해결 처리하지 않습니다.
+수정 요청을 받았다면 해당 코드를 확인하고 필요한 수정·검증을 거쳐 Push합니다. 댓글에 변경 사항을 설명한 뒤 논의가 끝나면 `Resolve conversation`을 사용합니다.
 
 ![리뷰 스레드 및 Resolve](assets/github-collaboration/11-review-thread-resolve-private.png)
 
@@ -166,15 +166,15 @@ PR 본문 항목과 작성 기준은 [PR 작성 가이드](PR_GUIDE.md)와 [공�
 - [ ] 리뷰어와 합의한 필수 수정 사항을 해결했는가?
 - [ ] 팀에서 요구하는 승인과 대상 브랜치를 확인했는가?
 
-두 MOAMOA README 모두 **최소 1명 Approve 후 작성자가 Merge**하도록 안내합니다. Flutter는 별도의 CI 조건과 리뷰어 자동 지정 규칙이 있습니다. 조직 공통 가이드의 권장사항을 모든 저장소의 기술적 강제 규칙으로 해석해서는 안 됩니다.
+두 MOAMOA README 모두 **최소 1명 Approve 후 작성자가 Merge**하도록 안내합니다. Flutter는 별도의 CI 조건과 리뷰어 자동 지정 규칙이 있습니다. 승인과 CI의 실제 적용 조건은 저장소별 운영 규칙과 설정을 확인합니다.
 
 ![충돌 여부·수정 요청·Merge 버튼](assets/github-collaboration/12-merge-readiness.png)
 
-`No conflicts with base branch`나 `Merge pull request` 버튼만으로 리뷰가 완료되었다고 판단하지 마세요.
+`No conflicts with base branch`는 충돌 여부를 나타냅니다. Merge 전에는 리뷰 완료와 프로젝트의 승인·검증 조건을 함께 확인합니다.
 
 ![PR 병합 완료 화면](assets/github-collaboration/13-merged-issue-status.png)
 
-PR이 병합되어도 관련 Issue가 반드시 자동 종료되는 것은 아닙니다. 종료 키워드·대상 저장소·기본 브랜치 병합 조건을 확인하고 Issue 상태를 별도로 점검합니다.
+PR 병합 후에는 종료 키워드·대상 저장소·기본 브랜치 병합 조건과 Issue 상태를 확인합니다.
 
 ## 관련 문서
 
