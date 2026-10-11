@@ -150,6 +150,34 @@ PR 본문 항목과 작성 기준은 [PR 작성 가이드](PR_GUIDE.md)와 [공�
 
 ## 5. 리뷰 제출 및 피드백 반영
 
+### 리뷰어 지정 및 승인 상태 확인
+
+PR 작성자는 오른쪽 **Reviewers**에서 팀이 지정한 **운영진 또는 공통 작업 담당 리뷰어**를 확인하고, 필요하면 리뷰를 요청합니다. 리뷰 요청과 승인 완료는 다릅니다. MOAMOA의 기본 협업 기준은 **최소 1명 Approve 후 작성자가 Merge**하는 것이며, 실제로 누가 필수 승인자인지와 병합 차단 여부는 해당 저장소의 `CODEOWNERS`, 브랜치 보호 규칙 및 팀 운영 정책을 따릅니다. 봇 리뷰나 댓글만으로 사람의 승인을 대신했다고 판단하지 않습니다.
+
+| 화면 상태 | 의미 | 다음 행동 |
+| --- | --- | --- |
+| 노란색 점 또는 리뷰 대기 표시 | 리뷰가 요청됐지만 해당 리뷰어의 최종 결과가 아직 표시되지 않은 상태일 수 있음 | 리뷰 완료를 기다리거나 담당 리뷰어에게 확인 |
+| 초록색 체크 | 해당 리뷰어의 **Approve** 표시 | 필수 승인 수, 다른 수정 요청 및 CI 상태도 확인 |
+| 빨간색 변경 요청 표시 | 해당 리뷰어의 **Request changes** 표시 | 지적 사항 수정·검증·Push 후 재검토 요청 |
+
+**① 리뷰 대기 및 충돌이 있는 PR 예시**
+
+![리뷰 대기 표시와 별도의 Merge conflicts 배지](assets/github-collaboration/review-pending-and-conflicts.png)
+
+노란색 표시가 보일 때 이를 승인 완료로 해석하지 않습니다. 상단의 `Merge conflicts`는 **리뷰 승인과 별개인 브랜치 충돌 문제**입니다.
+
+**② 리뷰 승인이 표시된 PR 예시**
+
+![Reviewers 영역의 초록색 승인 체크](assets/github-collaboration/review-approved.png)
+
+초록색 체크는 해당 리뷰어의 승인을 나타냅니다. `Ready to merge`는 당시 GitHub가 표시한 병합 가능 상태이지 모든 팀 내부 검토가 끝났다는 보장은 아닙니다.
+
+**③ 수정 요청과 승인이 함께 보이는 PR 예시**
+
+![서로 다른 리뷰어의 변경 요청 및 승인 표시](assets/github-collaboration/review-changes-requested.png)
+
+한 리뷰어가 승인했더라도 다른 리뷰어의 수정 요청이 남아 있을 수 있습니다. 수정 요청의 해결 여부, 재승인 필요 여부, 보호 규칙을 확인한 다음 Merge를 판단합니다. **아이콘만 보고 현재 병합 가능 여부를 단정하지 않습니다.**
+
 `Finish your review`에서는 `Comment`(의견), `Approve`(승인), `Request changes`(수정 요청) 중 하나를 선택해 `Submit review`합니다. `Start a review`로 여러 댓글을 묶을 수도 있습니다. `Request changes`가 병합을 차단하는지는 저장소 보호 규칙에 따라 달라집니다.
 
 ![리뷰 제출 옵션](assets/github-collaboration/10-review-submit-options-corrected.png)
