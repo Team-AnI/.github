@@ -98,7 +98,7 @@ flowchart LR
 
 ## 🧱 Backend Docs
 
-백엔드 서비스(Auth, Report, Web, Gateway, Blog 등)는 아래 공통 문서를 기준으로 맞춥니다:
+백엔드 서비스는 아래 공통 문서를 기준으로 맞춥니다:
 
 - ✅ Backend Docs Index: **[README.md](../docs/backend/README.md)**
 - ✅ API 네이밍 가이드: **[API_NAMING.md](../docs/backend/API_NAMING.md)**
