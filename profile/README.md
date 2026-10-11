@@ -113,7 +113,7 @@ flowchart LR
 
 2. 참여할 레포 하나 선택하기  
    - `A-AND-I-<Period>-CODE-LAB` 또는  
-   - `A-AND-I-<Period>-PROJECT-<Team>` / `A-AND-I-<Period>-PROJECT-<Service>`
+   - 프로젝트명(예: `ATTENDANCE`, `FOOD-RECOMMENDER`) 또는 선택 형식인 `A-AND-I-<Period>-PROJECT-<Team>` / `A-AND-I-<Period>-PROJECT-<Service>`
 
 3. **첫 PR**로 가볍게 시작하기 (문서/예제/README 개선 추천)
 
@@ -127,7 +127,7 @@ flowchart LR
   - `A-AND-I-<Period>-CODE-LAB` : 실습/과제/예제 모음
 
 - **Projects (팀 프로젝트)**  
-  - `A-AND-I-<Period>-PROJECT-<Team>` 또는 `A-AND-I-<Period>-PROJECT-<Service>` : 팀 프로젝트 저장소
+  - 프로젝트명(예: `ATTENDANCE`, `FOOD-RECOMMENDER`) : 팀 프로젝트 저장소. `A-AND-I-<Period>-PROJECT-<Team>` / `A-AND-I-<Period>-PROJECT-<Service>` 형식은 선택 사항입니다.
 
 - **Docs (가이드/규칙)**  
   - `docs` : 규칙/가이드/회고 아카이브  
