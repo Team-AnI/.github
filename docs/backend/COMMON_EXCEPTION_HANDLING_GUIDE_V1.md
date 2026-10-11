@@ -142,7 +142,8 @@ A&I 백엔드 프로젝트의 API 응답 형식, HTTP 상태코드, 에러 코�
 | `HttpMessageNotReadableException` | 400 | `JSON_PARSE_ERROR` 또는 `ENUM_MISMATCH` |
 | `MissingServletRequestParameterException` | 400 | `MISSING_REQUIRED_VALUE` |
 | `MissingRequestHeaderException` | 400 | `MISSING_REQUIRED_VALUE` |
-| `MissingPathVariableException` | 400 | `MISSING_REQUIRED_VALUE` |
+| `MissingPathVariableException` (경로 변수 매핑 오류) | 500 | `INTERNAL_ERROR` |
+| `MissingPathVariableException` (변환 후 값이 `null`) | 400 | `MISSING_REQUIRED_VALUE` |
 | `HttpRequestMethodNotSupportedException` | 405 | `METHOD_NOT_ALLOWED` |
 | `HttpMediaTypeNotSupportedException` | 415 | `UNSUPPORTED_MEDIA_TYPE` |
 | `AccessDeniedException` | 403 | `FORBIDDEN` |
