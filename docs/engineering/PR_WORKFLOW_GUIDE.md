@@ -173,7 +173,8 @@ PR 작성자는 [PR 작성 가이드](PR_GUIDE.md)에 따라 오른쪽 **Reviewe
 
 **③ 수정 요청과 승인이 함께 보이는 PR 예시**
 
-![서로 다른 리뷰어의 변경 요청 및 승인 표시](assets/github-collaboration/review-changes-requested.png)
+<img width="1770" height="690" alt="review-changes-requested" src="https://github.com/user-attachments/assets/86f5feb3-beab-488c-80a9-eaafae9c2d7c" />
+
 
 한 리뷰어가 승인했더라도 다른 리뷰어의 수정 요청이 남아 있을 수 있습니다. 수정 요청의 해결 여부, 재승인 필요 여부, 보호 규칙을 확인한 다음 Merge를 판단합니다.
 
@@ -201,7 +202,7 @@ Merge 담당자와 필수 승인·CI 조건은 해당 저장소의 운영 규칙
 
 ![PR 병합 완료 화면](assets/github-collaboration/13-merged-issue-status.png)
 
-PR 병합 후에는 종료 키워드·대상 저장소·기본 브랜치 병합 조건과 Issue 상태를 확인합니다.
+PR 병합 후에는 종료 키워드·대상 저장소·기본 브랜치 병합 조건과 Issue 상태를 최신화합니다.
 
 ## 관련 문서
 
