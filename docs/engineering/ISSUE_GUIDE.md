@@ -117,6 +117,7 @@ UI 문제는 화면과 기기 정보를, API 문제는 요청·응답 및 상태
 
 ## 관련 문서
 
-- [PR 작성 및 리뷰 실전 가이드](PR_WORKFLOW_GUIDE.md)
+- [A&I 커밋 컨벤션](COMMIT_CONVENTION.md)
 - [A&I PR 작성 원칙](PR_GUIDE.md)
 - [A&I PR/리뷰 운영 원칙](PR_REVIEW_GUIDE.md)
+- [PR 작성 및 리뷰 실전 가이드](PR_WORKFLOW_GUIDE.md)
