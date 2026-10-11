@@ -1,6 +1,6 @@
 # PR Guide (A&I) — PR 작성자용
 
-A&I에서는 MOAMOA Server·Flutter의 공통 방식을 기본으로, **한 PR에 한 목적**을 담고 실제 검증 결과를 공유합니다. 상세 화면 설명은 [PR 실전 가이드](PR_WORKFLOW_GUIDE.md)를 참고하세요.
+A&I 프로젝트에서는 **한 PR에 한 목적**을 담고 실제 검증 결과를 공유합니다. 상세 화면 설명은 [PR 실전 가이드](PR_WORKFLOW_GUIDE.md)를 참고하세요.
 
 ## 1. PR 생성 전
 

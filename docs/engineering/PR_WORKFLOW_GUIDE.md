@@ -3,7 +3,7 @@
 > **대상:** A&I 웹·모바일·백엔드·AI 트랙 구성원  
 > **목적:** 작은 변경을 올리고, 검증 근거를 공유하고, 존중하는 리뷰로 품질을 높입니다.
 
-이 문서는 [MOAMOA Server](https://github.com/Team-AnI/MOAMOA-Server/blob/main/README.md), [MOAMOA Flutter](https://github.com/Team-AnI/MOAMOA-Flutter/blob/main/README.md)의 실제 협업 흐름을 예시로 설명합니다. [A&I 공통 PR 가이드](PR_GUIDE.md), [리뷰 운영 가이드](PR_REVIEW_GUIDE.md), [커밋 컨벤션](COMMIT_CONVENTION.md)과 함께 읽어 주세요. **A&I 기본 규칙은 MOAMOA의 공통 방식으로 통일하되, 프로젝트별 자동 검사 및 별도 운영 규칙은 해당 저장소 문서를 따릅니다.**
+이 문서는 A&I 프로젝트의 PR 작성과 리뷰 과정을 안내합니다. 실습에서는 [MOAMOA Server](https://github.com/Team-AnI/MOAMOA-Server/blob/main/README.md), [MOAMOA Flutter](https://github.com/Team-AnI/MOAMOA-Flutter/blob/main/README.md)의 Fork 기반 협업 흐름을 예시로 사용합니다. [A&I 공통 PR 가이드](PR_GUIDE.md), [리뷰 운영 가이드](PR_REVIEW_GUIDE.md), [커밋 컨벤션](COMMIT_CONVENTION.md)과 함께 읽어 주세요. **공통 규칙은 관련 가이드를 따르고, 프로젝트별 자동 검사 및 별도 운영 규칙은 해당 저장소 문서를 따릅니다.**
 
 ## 1. 전체 흐름
 
@@ -51,7 +51,7 @@ git pull --ff-only upstream main
 git switch -c 'feature/#12-login'
 ```
 
-두 저장소의 작업 브랜치 예시는 `feature/#번호-내용`, `fix/#번호-내용`, `docs/#번호-내용`입니다. **A&I 조직의 기본 규칙도 MOAMOA 형식인 `feature/#번호-내용`을 사용합니다.** 저장소별 자동화나 별도 합의가 있다면 해당 프로젝트 README를 우선합니다.
+두 저장소의 작업 브랜치 예시는 `feature/#번호-내용`, `fix/#번호-내용`, `docs/#번호-내용`입니다. **A&I 기본 작업 브랜치는 유형 + Issue 번호 + 작업 요약 형식으로 작성합니다.** 저장소별 자동화나 별도 합의가 있다면 해당 프로젝트 README를 우선합니다.
 
 ```bash
 git status
@@ -152,7 +152,7 @@ PR 본문 항목과 작성 기준은 [PR 작성 가이드](PR_GUIDE.md)와 [공�
 
 ### 리뷰어 지정 및 승인 상태 확인
 
-PR 작성자는 오른쪽 **Reviewers**에서 팀이 지정한 **운영진 또는 공통 작업 담당 리뷰어**를 확인하고, 필요하면 리뷰를 요청합니다. 리뷰 요청과 승인 완료는 다릅니다. MOAMOA의 기본 협업 기준은 **최소 1명 Approve 후 작성자가 Merge**하는 것이며, 실제로 누가 필수 승인자인지와 병합 차단 여부는 해당 저장소의 `CODEOWNERS`, 브랜치 보호 규칙 및 팀 운영 정책을 따릅니다. 봇 리뷰와 일반 댓글은 지정 리뷰어의 Approve와 구분합니다.
+PR 작성자는 오른쪽 **Reviewers**에서 팀이 지정한 **운영진 또는 공통 작업 담당 리뷰어**를 확인하고, 필요하면 리뷰를 요청합니다. 리뷰 요청과 승인 완료는 다릅니다. 필수 승인자와 승인 수, 병합 차단 여부는 해당 저장소의 `CODEOWNERS`, 브랜치 보호 규칙 및 팀 운영 정책을 따릅니다. 예를 들어 MOAMOA에서는 **최소 1명 Approve 후 작성자가 Merge**하는 기준을 사용합니다. 봇 리뷰와 일반 댓글은 지정 리뷰어의 Approve와 구분합니다.
 
 | 화면 상태 | 의미 | 다음 행동 |
 | --- | --- | --- |

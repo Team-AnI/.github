@@ -3,9 +3,9 @@
 > **대상:** A&I 웹·모바일·백엔드·AI 트랙 구성원  
 > **목적:** 작업의 이유, 범위, 완료 기준을 다른 팀원도 이해할 수 있도록 기록합니다.
 
-A&I 공통 운영 기준은 MOAMOA Server·Flutter에서 실제 사용 중인 방식에 맞춥니다. 저장소별 자동화·예외 규칙은 해당 프로젝트 README가 우선합니다.
+이 문서는 A&I 프로젝트의 공통 Issue 작성 기준을 안내합니다. 저장소별 자동화·운영 규칙은 해당 프로젝트 README를 따릅니다.
 
-이 문서는 [MOAMOA Server](https://github.com/Team-AnI/MOAMOA-Server/blob/main/README.md), [MOAMOA Flutter](https://github.com/Team-AnI/MOAMOA-Flutter/blob/main/README.md)의 공통 흐름을 바탕으로 작성한 **실전 안내**입니다. 저장소에 별도 템플릿·규칙이 있다면 해당 프로젝트 규칙을 우선합니다.
+실습 사례로 [MOAMOA Server](https://github.com/Team-AnI/MOAMOA-Server/blob/main/README.md), [MOAMOA Flutter](https://github.com/Team-AnI/MOAMOA-Flutter/blob/main/README.md)의 협업 흐름을 소개합니다. 저장소에 별도 템플릿·규칙이 있다면 해당 프로젝트 규칙을 우선합니다.
 
 ## 1. Issue가 필요한 이유
 
@@ -27,7 +27,7 @@ Issue는 '할 일'뿐 아니라 **왜 필요한지, 누가 맡는지, 언제 완
 
 ## 3. 제목 규칙
 
-두 MOAMOA 저장소에서 사용하는 기본 형태는 다음과 같습니다.
+Issue 제목의 기본 형태는 다음과 같습니다.
 
 ```text
 [TYPE] 작업 내용 요약
