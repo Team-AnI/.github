@@ -92,6 +92,8 @@ flowchart LR
 - ✅ 커밋 컨벤션: **[COMMIT_CONVENTION.md](../docs/engineering/COMMIT_CONVENTION.md)**
 - ✅ PR 작성 가이드: **[PR_GUIDE.md](../docs/engineering/PR_GUIDE.md)**
 - ✅ PR/리뷰 가이드: **[PR_REVIEW_GUIDE.md](../docs/engineering/PR_REVIEW_GUIDE.md)**
+- ✅ Issue 작성 실전 가이드: **[ISSUE_GUIDE.md](../docs/engineering/ISSUE_GUIDE.md)**
+- ✅ PR 생성·코드 리뷰 실전 가이드: **[PR_WORKFLOW_GUIDE.md](../docs/engineering/PR_WORKFLOW_GUIDE.md)**
 - ✅ 클린 코드 가이드: **[CLEAN_CODE.md](../docs/engineering/CLEAN_CODE.md)**
 
 ## 🧱 Backend Docs
