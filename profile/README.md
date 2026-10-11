@@ -89,9 +89,11 @@ flowchart LR
 
 협업 품질은 “규칙 + 습관”에서 나옵니다. 아래 문서를 기준으로 맞춥니다:
 
+- ✅ Issue 작성·라벨 가이드: **[ISSUE_GUIDE.md](../docs/engineering/ISSUE_GUIDE.md)**
 - ✅ 커밋 컨벤션: **[COMMIT_CONVENTION.md](../docs/engineering/COMMIT_CONVENTION.md)**
 - ✅ PR 작성 가이드: **[PR_GUIDE.md](../docs/engineering/PR_GUIDE.md)**
-- ✅ PR/리뷰 가이드: **[PR_REVIEW_GUIDE.md](../docs/engineering/PR_REVIEW_GUIDE.md)**
+- ✅ 코드 리뷰 원칙: **[PR_REVIEW_GUIDE.md](../docs/engineering/PR_REVIEW_GUIDE.md)**
+- ✅ GitHub 협업 실습 가이드: **[PR_WORKFLOW_GUIDE.md](../docs/engineering/PR_WORKFLOW_GUIDE.md)**
 - ✅ 클린 코드 가이드: **[CLEAN_CODE.md](../docs/engineering/CLEAN_CODE.md)**
 
 ## 🧱 Backend Docs
@@ -115,7 +117,7 @@ flowchart LR
 
 3. **첫 PR**로 가볍게 시작하기 (문서/예제/README 개선 추천)
 
-4. PR 작성은 **PR_GUIDE**대로 “변경 내용 + 확인 방법”만 적으면 충분해요
+4. PR 작성은 **PR_GUIDE**와 공통 PR 템플릿을 참고해 관련 이슈, 작업 내용, 검증 결과를 작성합니다.
 
 ---
 
