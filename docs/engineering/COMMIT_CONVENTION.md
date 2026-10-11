@@ -30,7 +30,7 @@
 | `chore` | 빌드·의존성·환경 설정 | `chore: 의존성 업데이트 (#3)` |
 | `ci` | CI/CD 변경 | `ci: PR 검사 추가 (#5)` |
 
-MOAMOA Flutter는 UI 중심 작업에 `design`을, 두 MOAMOA 프로젝트는 파일 이동·삭제 등에 `rename`, `remove`를 사용하기도 합니다. **해당 프로젝트에서 정의한 Type을 우선**합니다.
+`design`, `rename`, `remove` 등 추가 Type은 **해당 프로젝트에서 정의한 경우에 사용**합니다.
 
 ## 3. 작성 시 주의사항
 

@@ -5,8 +5,6 @@
 
 이 문서는 A&I 프로젝트의 공통 Issue 작성 기준을 안내합니다. 저장소별 자동화·운영 규칙은 해당 프로젝트 README를 따릅니다.
 
-실습 사례로 [MOAMOA Server](https://github.com/Team-AnI/MOAMOA-Server/blob/main/README.md), [MOAMOA Flutter](https://github.com/Team-AnI/MOAMOA-Flutter/blob/main/README.md)의 협업 흐름을 소개합니다. 저장소에 별도 템플릿·규칙이 있다면 해당 프로젝트 규칙을 우선합니다.
-
 ## 1. Issue가 필요한 이유
 
 Issue는 '할 일'뿐 아니라 **왜 필요한지, 누가 맡는지, 언제 완료인지**를 합의하는 공간입니다. 기능 구현, 버그 수정, UI 개선, 테스트, CI, 문서 및 논의도 Issue로 관리할 수 있습니다.
@@ -16,7 +14,7 @@ Issue는 '할 일'뿐 아니라 **왜 필요한지, 누가 맡는지, 언제 완
 ## 2. Issue 만들기
 
 1. 작업할 저장소의 **Issues → New issue**를 엽니다.
-2. 템플릿이 있으면 작업 유형에 맞는 템플릿을 선택합니다. MOAMOA Flutter에는 기능·버그·문서·기타 작업 템플릿이 있습니다. 저장소에 따라 템플릿이 없을 수 있습니다.
+2. 템플릿이 있으면 작업 유형에 맞는 템플릿을 선택합니다. 저장소에 따라 템플릿이 없을 수 있습니다.
 3. 제목과 본문을 작성합니다.
 4. **Assignees**(담당자), **Labels**(작업 분류), 필요한 경우 **Projects / Milestone**을 설정합니다.
 5. Issue 생성 후 번호를 확인합니다.
@@ -44,7 +42,7 @@ Issue 제목의 기본 형태는 다음과 같습니다.
 | `TEST` | 테스트 | `[TEST] 로그인 실패 검증 추가` |
 | `CI` | 자동화 | `[CI] PR 검증 워크플로 추가` |
 
-`DESIGN`은 Flutter README에 명시된 유형입니다. 프로젝트별 Issue 템플릿과 자동 검사 기준이 있다면 이를 우선합니다.
+프로젝트별 Issue 템플릿과 자동 검사 기준이 있다면 이를 우선합니다.
 
 ## 4. Issue 라벨 안내
 
@@ -52,14 +50,14 @@ Issue 제목의 `[TYPE]`은 작업 유형을 표현하고 **Labels는 GitHub에�
 
 | 라벨 | 의미 | 사용 예시 |
 | --- | --- | --- |
-| `enhancement` | 기능 추가 또는 기존 기능 개선 | `[FEAT]` 기능, `[REFACTOR]` 개선, Flutter의 `[DESIGN]` 작업 |
+| `enhancement` | 기능 추가 또는 기존 기능 개선 | `[FEAT]` 기능, `[REFACTOR]` 개선, `[DESIGN]` UI/디자인 작업 |
 | `bug` | 동작 오류·결함 | `[FIX]` 오류 수정 |
 | `documentation` | 문서·가이드·README 변경 | `[DOCS]` 사용법 문서화 |
 | `question` | 설계 결정, 요구사항 등 논의 필요 | 구현 방향 논의 |
 | `help wanted` | 다른 기여자의 도움이 필요함 | 구현 또는 재현 지원 요청 |
 | `good first issue` | 처음 기여하는 팀원에게 적합 | 범위가 작은 문서·버그 작업 |
 
-> 이 표는 MOAMOA Server·Flutter README에 공통으로 설명된 라벨입니다. `enhancement`는 UI 작업에도 쓸 수 있지만 `[TYPE]`과 라벨이 1:1 대응하는 것은 아닙니다. 없는 라벨을 임의로 생성하지 않고 팀과 먼저 합의하세요.
+> `enhancement`는 UI 작업에도 쓸 수 있지만 `[TYPE]`과 라벨이 1:1 대응하는 것은 아닙니다. 없는 라벨을 임의로 생성하지 않고 팀과 먼저 합의하세요.
 
 ## 5. 본문 템플릿
 
